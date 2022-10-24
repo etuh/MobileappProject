@@ -9,16 +9,29 @@
     android:orientation="vertical"
     android:padding="30dp"
     tools:context=".Authentication.AuthenticationActivity">
-
-    <ImageView
-        android:id="@+id/login_page_image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/ic_baseline_person_24"
+    <androidx.cardview.widget.CardView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="99dp"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="50dp"/>
-
+        android:layout_marginBottom="50dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="99dp"
+            app:cardBackgroundColor="@color/paw_orange">
+            <ImageView
+                android:id="@+id/login_page_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/patrol"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_input_layout"
