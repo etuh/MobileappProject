@@ -55,7 +55,7 @@ public class AuthenticationActivity extends AppCompatActivity {
                 startActivity(registerIntent);
             }
         });
-        //comments
+        //commentss
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
