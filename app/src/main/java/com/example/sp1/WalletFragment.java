@@ -32,7 +32,7 @@ public class WalletFragment extends Fragment {
     private String mParam2;
     // Variables used in onCreateView
     List<NewsModel> newsModelList = new ArrayList<>();
-    private int[] dogImages = {R.drawable.dog1, R.drawable.dog2, R.drawable.dog3};
+    private int[] dogImages = {R.mipmap.dog1, R.drawable.dog2, R.drawable.dog3};
     private NewsModel newsModel;
 
 

@@ -14,29 +14,38 @@
     android:orientation="vertical"
     android:padding="40dp"
     tools:context=".Authentication.AuthenticationActivity">
-    <androidx.cardview.widget.CardView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_dog_paw"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_gravity="center"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="99dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="50dp">
-        <androidx.cardview.widget.CardView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            app:cardCornerRadius="99dp"
-            app:cardBackgroundColor="@color/paw_orange">
-            <ImageView
-                android:id="@+id/login_page_image"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/patrol"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop"/>
-        </androidx.cardview.widget.CardView>
-    </androidx.cardview.widget.CardView>
+        android:layout_marginTop="0dp"
+        app:lottie_autoPlay="true"
+        android:layout_marginBottom="10dp"
+        app:lottie_rawRes="@raw/norm_dog"/>
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        app:cardBackgroundColor="@color/white"-->
+<!--        app:cardCornerRadius="99dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginBottom="50dp">-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="70dp"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            app:cardCornerRadius="99dp"-->
+<!--            app:cardBackgroundColor="@color/paw_orange">-->
+<!--            <ImageView-->
+<!--                android:id="@+id/login_page_image"-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:src="@drawable/patrol"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:scaleType="centerCrop"/>-->
+<!--        </androidx.cardview.widget.CardView>-->
+<!--    </androidx.cardview.widget.CardView>-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

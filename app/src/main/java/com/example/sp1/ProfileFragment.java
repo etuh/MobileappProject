@@ -31,6 +31,8 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     ArrayList<NewsModel> newsModelList = new ArrayList<>();
+    private int [] images={R.drawable.dog2, R.drawable.dog3};
+
 
 
     public ProfileFragment() {
@@ -77,8 +79,8 @@ public class ProfileFragment extends Fragment {
 //        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
     private void setUpNewsList(){
-        for(int i = 0; i<3;i++) {
-            NewsModel newsModelHello = new NewsModel("France", "Mountain View", R.drawable.nairobi, 4.5f);
+        for(int i = 0; i<images.length;i++) {
+            NewsModel newsModelHello = new NewsModel("France", "Mountain View", images[i], 4.5f);
             newsModelList.add(newsModelHello);
         }
     }
