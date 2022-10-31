@@ -1,134 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/orange_gradient"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".JobsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/jobs_title"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal">
+        android:background="@drawable/curved_border"
+        android:layout_marginBottom="100dp"
+        >
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_weight="1"
-            android:background="@android:color/black" />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/menu_icon"
+            app:tint="@color/white" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
             android:text="Jobs"
-            android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:layout_marginEnd="20dp"
-            android:layout_weight="1"
-            android:background="@android:color/black" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/jobs_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/border"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"/>
 
-        <LinearLayout
-            android:layout_width="248dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:src="@drawable/ic_baseline_person_24" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="Job Description 1"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="12dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:text="View"
-            android:textAllCaps="false"
-            android:textColor="@color/black" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/border"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="248dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:src="@drawable/ic_baseline_person_24" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="Job Description 2"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/button22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="12dp"
-            android:layout_weight="1"
-            android:text="View" />
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/drawable/border.xml" value="0.1" />
+        <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/drawable/curved_border.xml" value="0.1" />
         <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/drawable/orange_gradient.xml" value="0.106" />
         <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/layout/activity_authentication.xml" value="0.1408514492753623" />
         <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
@@ -12,6 +13,7 @@
         <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/layout/fragment_jobs.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/layout/fragment_profile.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/layout/fragment_wallet.xml" value="0.1" />
+        <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/layout/item_layout.xml" value="0.1" />
         <entry key="..\:/Users/jetri/AndroidStudioProjects/SP1/app/src/main/res/layout/jobs_row.xml" value="0.1408514492753623" />
       </map>
     </option>

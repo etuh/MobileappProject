@@ -2,4 +2,41 @@
     <string name="app_name">SP1</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="county">
+        <item>Mombasa</item>
+        <item>Nairobi</item>
+        <item>Kisumu</item>
+        <item>Nakuru</item>
+        <item>Eldoret</item>
+        <item>Machakos</item>
+        <item>Lamu</item>
+    </string-array>
+    <string-array name="person_name">
+        <item>Jane Mwangi</item>
+        <item>Austin Mwandoe</item>
+        <item>Nicole Atieno</item>
+        <item>Sonia Splendour</item>
+        <item>James Gichuru</item>
+        <item>Michelle Anika</item>
+        <item>Gloria Muni</item>
+    </string-array>
+    <string-array name="location">
+        <item>Sangale Road</item>
+        <item>Moi Avenue</item>
+        <item>Accra Road</item>
+        <item>Kenyatta Lane</item>
+        <item>Juja City</item>
+        <item>Oginga Street</item>
+        <item>Limpopo Highway</item>
+    </string-array>
+    <string-array name="price">
+        <item>12</item>
+        <item>322</item>
+        <item>54</item>
+        <item>70</item>
+        <item>30</item>
+        <item>400</item>
+        <item>890</item>
+    </string-array>
+
 </resources>

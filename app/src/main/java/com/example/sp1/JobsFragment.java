@@ -3,10 +3,18 @@ package com.example.sp1;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.sp1.Adapters.JobsAdapter;
+import com.example.sp1.Models.Jobs;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +31,8 @@ public class JobsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    ArrayList<Jobs>jobsModel = new ArrayList<>();
 
     public JobsFragment() {
         // Required empty public constructor
@@ -59,6 +69,28 @@ public class JobsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_jobs, container, false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_jobs, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.jobs_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        setUpJobsList();
+        JobsAdapter jobsAdapter = new JobsAdapter(this.getContext(),jobsModel);
+        recyclerView.setAdapter(jobsAdapter);
+        return view;
+//        return inflater.inflate(R.layout.fragment_jobs, container, false);
     }
+    private void setUpJobsList(){
+        String [] jobCounties = getResources().getStringArray(R.array.county);
+        String [] jobPersons = getResources().getStringArray(R.array.person_name);
+        String [] jobLocations = getResources().getStringArray(R.array.location);
+        String [] jobPrices = getResources().getStringArray(R.array.price);
+        for(int i=0;i< jobCounties.length;i++){
+            jobsModel.add(new Jobs( jobCounties[i],
+                    jobPersons[i],
+                    jobLocations[i],
+                    jobPrices[i],
+                    R.drawable.nairobi));
+        }
+
+    }
+
 }

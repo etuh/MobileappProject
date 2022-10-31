@@ -3,10 +3,17 @@ package com.example.sp1;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.sp1.Adapters.NewsAdapter;
+import com.example.sp1.Models.NewsModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,11 @@ public class WalletFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    // Variables used in onCreateView
+    List<NewsModel> newsModelList = new ArrayList<>();
+    private int[] dogImages = {R.drawable.dog1, R.drawable.dog2, R.drawable.dog3};
+    private NewsModel newsModel;
+
 
     public WalletFragment() {
         // Required empty public constructor
@@ -59,6 +71,19 @@ public class WalletFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_wallet, container, false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_wallet, container, false);
+        ViewPager2 viewPager2 = view.findViewById(R.id.view_pager);
+        setUpNewsList();
+        viewPager2.setAdapter(new NewsAdapter(newsModelList));
+
+        return view;
+//        return inflater.inflate(R.layout.fragment_wallet, container, false);
+    }
+    private void setUpNewsList(){
+        for(int i = 0; i<3;i++){
+            newsModel = new NewsModel("France", "Mountain View", dogImages[i],4.5f);
+            newsModelList.add(newsModel);
+
+        }
     }
 }

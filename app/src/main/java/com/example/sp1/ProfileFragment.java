@@ -3,10 +3,17 @@ package com.example.sp1;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.sp1.Adapters.NewsAdapter;
+import com.example.sp1.Models.NewsModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,8 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    ArrayList<NewsModel> newsModelList = new ArrayList<>();
+
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -59,6 +68,18 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_profile, container, false);
+        ViewPager2 viewPager2 = view.findViewById(R.id.view_pager);
+        setUpNewsList();
+        viewPager2.setAdapter(new NewsAdapter(newsModelList));
+
+        return view;
+//        return inflater.inflate(R.layout.fragment_profile, container, false);
+    }
+    private void setUpNewsList(){
+        for(int i = 0; i<3;i++) {
+            NewsModel newsModelHello = new NewsModel("France", "Mountain View", R.drawable.nairobi, 4.5f);
+            newsModelList.add(newsModelHello);
+        }
     }
 }
