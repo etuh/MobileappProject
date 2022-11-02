@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
                 loadFragment(fragment);
             }
         });
-        bottomNavigation.setCount(2,"3");
+        String [] personName = getResources().getStringArray(R.array.person_name);
+        String personLength= String.valueOf(personName.length);
+        bottomNavigation.setCount(2,personLength);
         bottomNavigation.show(2,true);
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override

@@ -3,14 +3,20 @@ package com.example.sp1;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.sp1.Adapters.JobsAdapter;
 import com.example.sp1.Adapters.NewsAdapter;
+import com.example.sp1.Adapters.WalletAdapter;
+import com.example.sp1.Models.Jobs;
 import com.example.sp1.Models.NewsModel;
+import com.example.sp1.Models.WalletModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +36,7 @@ public class WalletFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    // Variables used in onCreateView
-    List<NewsModel> newsModelList = new ArrayList<>();
-    private int[] dogImages = {R.mipmap.dog1, R.drawable.dog2, R.drawable.dog3};
-    private NewsModel newsModel;
+    ArrayList<WalletModel>walletModel = new ArrayList<>();
 
 
     public WalletFragment() {
@@ -72,18 +75,31 @@ public class WalletFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_wallet, container, false);
-        ViewPager2 viewPager2 = view.findViewById(R.id.view_pager);
-        setUpNewsList();
-        viewPager2.setAdapter(new NewsAdapter(newsModelList));
+        RecyclerView recyclerView = view.findViewById(R.id.history_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        setUpHistory();
+        WalletAdapter walletAdapter = new WalletAdapter(this.getContext(),walletModel);
+        recyclerView.setAdapter(walletAdapter);
+
 
         return view;
 //        return inflater.inflate(R.layout.fragment_wallet, container, false);
     }
-    private void setUpNewsList(){
-        for(int i = 0; i<3;i++){
-            newsModel = new NewsModel("France", "Mountain View", dogImages[i],4.5f);
-            newsModelList.add(newsModel);
+    private void setUpHistory(){
+        String [] employerName = getResources().getStringArray(R.array.employer_name);
+        String [] status = getResources().getStringArray(R.array.status);
+        String [] startDate = getResources().getStringArray(R.array.start_date);
+        String [] timeframe = getResources().getStringArray(R.array.timeframe);
+        String [] priceRange = getResources().getStringArray(R.array.wallet_price);
 
+        for(int i=0;i< employerName.length;i++){
+            walletModel.add(new WalletModel( employerName[i],
+                    status[i],
+                    startDate[i],
+                    timeframe[i],
+                    priceRange[i],
+                    R.drawable.nairobi));
         }
+
     }
 }

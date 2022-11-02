@@ -45,10 +45,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:text="Jeremy Munroe"
             android:textColor="@color/white"
-            android:text="My Name" />
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
