@@ -91,7 +91,7 @@ public class WalletFragment extends Fragment {
         String [] startDate = getResources().getStringArray(R.array.start_date);
         String [] timeframe = getResources().getStringArray(R.array.timeframe);
         String [] priceRange = getResources().getStringArray(R.array.wallet_price);
-
+    //Works
         for(int i=0;i< employerName.length;i++){
             walletModel.add(new WalletModel( employerName[i],
                     status[i],
