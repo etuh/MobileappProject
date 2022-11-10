@@ -30,13 +30,14 @@
                 android:layout_gravity="center"
                 app:cardCornerRadius="99dp"
                 app:cardBackgroundColor="@color/paw_orange">
+
                 <ImageView
                     android:id="@+id/login_page_image"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/patrol"
                     android:layout_gravity="center"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/patrol" />
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
 

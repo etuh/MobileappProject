@@ -1,5 +1,6 @@
 package com.example.sp1;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.sp1.Activities.ViewJob;
 import com.example.sp1.Adapters.JobsAdapter;
 import com.example.sp1.Models.Jobs;
 
@@ -33,6 +36,7 @@ public class JobsFragment extends Fragment {
     private String mParam2;
 
     ArrayList<Jobs>jobsModel = new ArrayList<>();
+    Button viewJob;
 
     public JobsFragment() {
         // Required empty public constructor
@@ -75,6 +79,7 @@ public class JobsFragment extends Fragment {
         setUpJobsList();
         JobsAdapter jobsAdapter = new JobsAdapter(this.getContext(),jobsModel);
         recyclerView.setAdapter(jobsAdapter);
+
         return view;
 //        return inflater.inflate(R.layout.fragment_jobs, container, false);
     }
