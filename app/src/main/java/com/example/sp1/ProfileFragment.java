@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.sp1.Activities.Calendar;
 import com.example.sp1.Activities.Profile;
+import com.example.sp1.Activities.Reports;
 import com.example.sp1.Adapters.NewsAdapter;
 import com.example.sp1.Models.NewsModel;
 
@@ -79,6 +80,7 @@ public class ProfileFragment extends Fragment {
         setUpNewsList();
         viewPager2.setAdapter(new NewsAdapter(newsModelList));
         CardView openProfile = view.findViewById(R.id.open_profile);
+        CardView openReports = view.findViewById(R.id.open_reports);
         CardView openCalendar = view.findViewById(R.id.openCalendar);
         openProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +93,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i =new Intent(getContext(), Calendar.class);
+                startActivity(i);
+            }
+        });
+        openReports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =new Intent(getContext(), Reports.class);
                 startActivity(i);
             }
         });
