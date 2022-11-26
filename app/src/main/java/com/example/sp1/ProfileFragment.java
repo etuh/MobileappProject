@@ -1,7 +1,9 @@
 package com.example.sp1;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -9,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.sp1.Activities.Calendar;
+import com.example.sp1.Activities.Profile;
 import com.example.sp1.Adapters.NewsAdapter;
 import com.example.sp1.Models.NewsModel;
 
@@ -74,6 +78,22 @@ public class ProfileFragment extends Fragment {
         ViewPager2 viewPager2 = view.findViewById(R.id.view_pager);
         setUpNewsList();
         viewPager2.setAdapter(new NewsAdapter(newsModelList));
+        CardView openProfile = view.findViewById(R.id.open_profile);
+        CardView openCalendar = view.findViewById(R.id.openCalendar);
+        openProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =new Intent(getContext(), Profile.class);
+                startActivity(i);
+            }
+        });
+        openCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =new Intent(getContext(), Calendar.class);
+                startActivity(i);
+            }
+        });
 
         return view;
 //        return inflater.inflate(R.layout.fragment_profile, container, false);

@@ -39,11 +39,11 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull JobsAdapter.MyViewHolder holder, int position) {
-    holder.countyName.setText(jobsModel.get(position).getCounty());
-    holder.personName.setText(jobsModel.get(position).getPostedBy());
-    holder.locationName.setText(jobsModel.get(position).getLocation());
+    holder.countyName.setText(jobsModel.get(position).getCounty_name());
+    holder.personName.setText(jobsModel.get(position).getClient_id());
+    holder.locationName.setText(jobsModel.get(position).getGeneral_area());
     holder.priceTag.setText(jobsModel.get(position).getPrice());
-    holder.imageView.setImageResource(jobsModel.get(position).getImageName());
+//    holder.imageView.setImageResource(jobsModel.get(position).getImageName());
         holder.viewJob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

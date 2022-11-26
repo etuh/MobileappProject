@@ -1,15 +1,16 @@
 <resources>
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
     <string name="app_name">SP1</string>
-<!--    For the activity_view_job-->
+    <!--    For the activity_view_job-->
     <string name="job_description">Job Description</string>
     <string name="job_employer">Job Employer</string>
     <string name="job_location">Job Location</string>
     <string name="image_description">A simple image</string>
     <!--    Accept Button-->
-        <string name="accept_job">Accept Job</string>
+    <string name="accept_job">Accept Job</string>
     <!--    Decline Button-->
-        <string name="decline_job">Decline Job</string>
-
+    <string name="decline_job">Decline Job</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
