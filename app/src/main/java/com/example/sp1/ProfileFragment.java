@@ -12,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.sp1.Activities.Calendar;
+import com.example.sp1.Activities.Maps;
 import com.example.sp1.Activities.Profile;
 import com.example.sp1.Activities.Reports;
 import com.example.sp1.Adapters.NewsAdapter;
+import com.example.sp1.Authentication.AuthenticationActivity;
 import com.example.sp1.Models.NewsModel;
 
 import java.util.ArrayList;
@@ -81,7 +83,10 @@ public class ProfileFragment extends Fragment {
         viewPager2.setAdapter(new NewsAdapter(newsModelList));
         CardView openProfile = view.findViewById(R.id.open_profile);
         CardView openReports = view.findViewById(R.id.open_reports);
+        CardView openMaps = view.findViewById(R.id.open_maps);
         CardView openCalendar = view.findViewById(R.id.openCalendar);
+        CardView signOut = view.findViewById(R.id.sign_out);
+
         openProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +98,20 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i =new Intent(getContext(), Calendar.class);
+                startActivity(i);
+            }
+        });
+        openMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =new Intent(getContext(), Maps.class);
+                startActivity(i);
+            }
+        });
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =new Intent(getContext(), AuthenticationActivity.class);
                 startActivity(i);
             }
         });

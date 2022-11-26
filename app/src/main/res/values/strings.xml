@@ -4,8 +4,15 @@
     <string name="app_name">SP1</string>
     <!--    For the activity_view_job-->
     <string name="job_description">Job Description</string>
-    <string name="job_employer">Job Employer</string>
-    <string name="job_location">Job Location</string>
+    <string name="job_detailed">Provide food and water.
+Brush fur and teeth and carry out other types of grooming.
+Walk dogs.
+Clean litter boxes.
+Give medications, if applicable.
+Pet sitters should also be responsible for notifying owners and taking pets to the vet if they should become sick or suffer an injury while under their supervision.
+    </string>
+    <string name="job_employer">Jane Mwangi</string>
+    <string name="job_location">Nairobi</string>
     <string name="image_description">A simple image</string>
     <!--    Accept Button-->
     <string name="accept_job">Accept Job</string>

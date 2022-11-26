@@ -91,6 +91,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/open_maps"
             android:layout_height="100dp"
             android:layout_width="120dp"
             android:layout_marginTop="20dp"
@@ -106,7 +107,7 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/history_icon"
+                android:src="@drawable/location_icon"
                 android:layout_gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -114,7 +115,7 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="History"
+                android:text="Map"
                 />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -231,6 +232,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/sign_out"
                 android:layout_height="100dp"
                 android:layout_width="120dp"
                 android:layout_marginEnd="10dp"
