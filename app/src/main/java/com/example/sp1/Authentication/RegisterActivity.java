@@ -42,6 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
         verification = new Verification(regFirst, regLast, regEmail, regPassword, cregPassword, firstLayout,
                 lastLayout, emailLayout, passwordLayout, cpasswordLayout);
 
+        //Log in here clickable text
         verification.monitorText();
         loginLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(loginIntent);
             }
         });
+
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context=".ProfileFragment">
         <LinearLayout
@@ -38,7 +38,8 @@
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/patrol" />
+                        android:src="@drawable/patrol"
+                        android:contentDescription="UserPfP" />
                 </androidx.cardview.widget.CardView>
             </androidx.cardview.widget.CardView>
 
@@ -47,8 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:text="Jeremy Munroe"
-                android:textColor="@color/white"
+                android:text="User"
+                android:id="@+id/username"
+                android:textColor="#EF6C00"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 

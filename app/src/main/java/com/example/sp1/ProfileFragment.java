@@ -3,6 +3,7 @@ package com.example.sp1;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
@@ -10,6 +11,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.sp1.Activities.Calendar;
 import com.example.sp1.Activities.Maps;
@@ -18,6 +21,14 @@ import com.example.sp1.Activities.Reports;
 import com.example.sp1.Adapters.NewsAdapter;
 import com.example.sp1.Authentication.AuthenticationActivity;
 import com.example.sp1.Models.NewsModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +49,9 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     ArrayList<NewsModel> newsModelList = new ArrayList<>();
-    private int [] images={R.drawable.dog2, R.drawable.dog3};
+    private final int [] images={R.drawable.dog2, R.drawable.dog3};
+
+//    private ListView listView;
 
 
 
@@ -66,6 +79,7 @@ public class ProfileFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -86,6 +100,8 @@ public class ProfileFragment extends Fragment {
         CardView openMaps = view.findViewById(R.id.open_maps);
         CardView openCalendar = view.findViewById(R.id.openCalendar);
         CardView signOut = view.findViewById(R.id.sign_out);
+
+//        listView = view.findViewById(R.id.username);
 
         openProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,6 +138,47 @@ public class ProfileFragment extends Fragment {
                 startActivity(i);
             }
         });
+//        final ArrayList<String> list = new ArrayList<>();
+//        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.activity_profile, list);
+//        listView.setAdapter(adapter);
+
+        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users");
+        reference.child("users").child("firstName").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>(){
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                    reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    //TODO: Display username on activity_profile id=username
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+            }
+        });
+
+
+//        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+////                list.clear();
+////                list.add(snapshot.getValue().toString());
+////                adapter.notifyDataSetChanged();
+//                ProfileFragment username = snapshot.getValue(ProfileFragment.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+
+
+
 
         return view;
 //        return inflater.inflate(R.layout.fragment_profile, container, false);

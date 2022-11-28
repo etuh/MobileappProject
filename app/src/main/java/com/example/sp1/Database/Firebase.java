@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,8 @@ public class Firebase {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseAuth firebaseAuth =  FirebaseAuth.getInstance();
     FirebaseUser firebaseUser = null;
+
+
 
     public void signIn(Context context, TextInputLayout emailLayout, TextInputLayout passLayout,
                        String email, String password){

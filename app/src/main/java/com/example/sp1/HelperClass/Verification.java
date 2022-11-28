@@ -30,6 +30,7 @@ public class Verification {
         this.confirmpasswordLayout = confirmpasswordLayout;
     }
 
+    //Getters and setters
     public TextInputEditText getRegFirst() {
         return regFirst;
     }
@@ -109,6 +110,8 @@ public class Verification {
     public void setConfirmpasswordLayout(TextInputLayout confirmpasswordLayout) {
         this.confirmpasswordLayout = confirmpasswordLayout;
     }
+
+
     public void monitorText(){
         //First Name
         regFirst.addTextChangedListener(new TextWatcher() {
